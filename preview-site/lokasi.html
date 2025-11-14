@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Klinik Tanganku — Beranda</title>
-  <meta name="description" content="Beranda klinik 3 lokasi">
+  <title>Klinik Tanganku — Lokasi</title>
+  <meta name="description" content="Lokasi klinik">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}.container{max-width:1152px}</style>
 <style>:root { --brand: #3993cd; }</style>
+  <link rel="stylesheet" href="styles-modern.morning-cocktail.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-  <div class="bg-sky-600 text-white">
+  <div class="bg-teal-700 text-white">
     <div class="container mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-between gap-2">
       <div class="text-sm">Klinik Tanganku — Pelayanan ramah & responsif</div>
       <div class="flex items-center gap-3 text-sm">
@@ -33,7 +34,7 @@
           <div class="font-bold text-lg">Klinik Tanganku</div>
         </a>
         <nav class="hidden lg:flex items-center gap-6">
-          <a href="index.html" class="text-teal-700 font-semibold">Beranda</a>
+          <a href="index.html" class="text-gray-700 hover:text-teal-700">Beranda</a>
           <a href="layanan.html" class="text-gray-700 hover:text-teal-700">Layanan</a>
           <a href="jadwal.html" class="text-gray-700 hover:text-teal-700">Jadwal Dokter</a>
           <a href="artikel.html" class="text-gray-700 hover:text-teal-700">Info Kesehatan</a>
@@ -45,7 +46,7 @@
       </div>
       <div id="mnav" class="lg:hidden hidden pb-4">
         <div class="grid gap-2">
-          <a href="index.html" class="text-teal-700 font-semibold">Beranda</a>
+          <a href="index.html" class="text-gray-700 hover:text-teal-700">Beranda</a>
           <a href="layanan.html" class="text-gray-700 hover:text-teal-700">Layanan</a>
           <a href="jadwal.html" class="text-gray-700 hover:text-teal-700">Jadwal Dokter</a>
           <a href="artikel.html" class="text-gray-700 hover:text-teal-700">Info Kesehatan</a>
@@ -55,127 +56,48 @@
     </div>
   </header>
 
-
-  <section id="hero" class="relative">
-    <div class="relative w-full">
-      <div class="aspect-[16/6] w-full overflow-hidden">
-        <img src="assets/hero-full.jpg" alt="Klinik Tanganku — Hero" class="w-full h-full object-cover" />
-      </div>
-
-      <!-- Left Text Box (10% transparent) with text slider -->
-      <div class="absolute" style="top:8%; left:6%;">
-        <div class="max-w-7xl mx-auto px-4 w-full grid grid-cols-12">
-          <div class="col-span-12 md:col-span-6">
-            <div class="rounded-2xl p-5 md:p-7" style="background: rgba(255,255,255,0.10)">
-              <span class="inline-block text-xs font-semibold px-2 py-1 rounded" style="border:1px solid #3993cd33;color:#3993cd">Garden Clinic • Nyaman & Teduh</span>
-              <h1 class="text-3xl md:text-5xl font-bold mt-2">Pelayanan Kesehatan Terpadu di 3 Lokasi</h1>
-              <p id="hero-text-rotator" class="mt-2 text-gray-700 max-w-2xl">Konsultasi dokter, pemeriksaan penunjang, dan rawat jalan — mudah diakses.</p>
-              <div class="mt-4 flex flex-wrap gap-3">
-                <a href="#lokasi" class="inline-flex items-center rounded-xl px-4 py-2 text-white" style="background:#39a2cd">Lihat Lokasi</a>
-                <a href="jadwal.html" class="inline-flex items-center rounded-xl px-4 py-2" style="color:#3993cd;border:1px solid #3993cd">Jadwal Dokter</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right overlay image slider -->
-      <div class="absolute inset-0 pointer-events-none">
-        <div class="max-w-6xl mx-auto px-4 h-full relative">
-          <div class="hidden md:block absolute right-[-20%] top-1/2 -translate-y-1/4">
-            <div class="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/10">
-              <img id="hero-img-rotator"
-                   src="assets/hero-slide-1.jpg"
-                   class="w-[720px] h-[460px] object-cover"
-                   alt="Slide" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <script>
-      const txts = [
-        "Konsultasi dokter umum & spesialis — cepat dan ramah.",
-        "Laboratorium & radiologi terintegrasi.",
-        "Pendaftaran mudah via WhatsApp & call center.",
-        "IGD 24 jam dan tindakan rawat jalan."
-      ];
-      let ti = 0;
-      setInterval(() => {
-        ti = (ti+1) % txts.length;
-        const el = document.getElementById('hero-text-rotator');
-        if (el) el.textContent = txts[ti];
-      }, 3500);
-
-      const imgs = ["assets/hero-slide-1.jpg","assets/hero-slide-2.jpg","assets/hero-slide-3.jpg"];
-      let ii = 0;
-      setInterval(() => {
-        ii = (ii+1) % imgs.length;
-        const img = document.getElementById('hero-img-rotator');
-        if (img) img.src = imgs[ii];
-      }, 3500);
-    </script>
-  </section>
-
-
-
-  <section id="lokasi" class="py-12">
+  <section class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6">Lokasi Kami</h2>
+      <h1 class="text-2xl md:text-3xl font-bold mb-6">Lokasi Kami</h1>
       <div class="grid lg:grid-cols-3 gap-6">
         <div class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-6">
           <div class="text-sm uppercase tracking-wide text-gray-500">Klinik Pusat</div>
           <h3 class="text-lg font-semibold mt-1">Klinik Tanganku — Solo Baru</h3>
           <p class="text-sm text-gray-600 mt-2">Jl. Contoh No. 1, Solo Baru, Sukoharjo</p>
+          <p class="text-sm">Telp: (0271) 000000</p>
           <div class="aspect-[16/10] rounded-xl overflow-hidden my-4">
             <img src="assets/clinic-1.jpg" alt="Solo Baru" class="w-full h-full object-cover" />
           </div>
           <div class="flex gap-2">
-            <a href="https://maps.google.com" class="inline-flex items-center rounded-xl px-3 py-2" style="color:#3993cd;border:1px solid #3993cd">Lihat Peta</a>
-            <a href="https://wa.me/6281112345678" class="inline-flex items-center rounded-xl px-3 py-2 text-white" style="background:#39a2cd">WhatsApp</a>
+            <a href="https://maps.google.com" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-white text-teal-700 ring-1 ring-teal-600 hover:bg-teal-50">Lihat Peta</a>
+            <a href="https://wa.me/6281112345678" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-teal-600 text-white hover:bg-teal-700">WhatsApp</a>
           </div>
         </div>
         <div class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-6">
           <div class="text-sm uppercase tracking-wide text-gray-500">Cabang</div>
           <h3 class="text-lg font-semibold mt-1">Klinik Tanganku — Laweyan</h3>
           <p class="text-sm text-gray-600 mt-2">Jl. Contoh No. 2, Laweyan, Surakarta</p>
+          <p class="text-sm">Telp: (0271) 111111</p>
           <div class="aspect-[16/10] rounded-xl overflow-hidden my-4">
             <img src="assets/clinic-2.jpg" alt="Laweyan" class="w-full h-full object-cover" />
           </div>
           <div class="flex gap-2">
-            <a href="https://maps.google.com" class="inline-flex items-center rounded-xl px-3 py-2" style="color:#3993cd;border:1px solid #3993cd">Lihat Peta</a>
-            <a href="https://wa.me/6281112345678" class="inline-flex items-center rounded-xl px-3 py-2 text-white" style="background:#39a2cd">WhatsApp</a>
+            <a href="https://maps.google.com" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-white text-teal-700 ring-1 ring-teal-600 hover:bg-teal-50">Lihat Peta</a>
+            <a href="https://wa.me/6281112345678" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-teal-600 text-white hover:bg-teal-700">WhatsApp</a>
           </div>
         </div>
         <div class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-6">
           <div class="text-sm uppercase tracking-wide text-gray-500">Cabang</div>
           <h3 class="text-lg font-semibold mt-1">Klinik Tanganku — Colomadu</h3>
           <p class="text-sm text-gray-600 mt-2">Jl. Contoh No. 3, Colomadu, Karanganyar</p>
+          <p class="text-sm">Telp: (0271) 222222</p>
           <div class="aspect-[16/10] rounded-xl overflow-hidden my-4">
             <img src="assets/clinic-3.jpg" alt="Colomadu" class="w-full h-full object-cover" />
           </div>
           <div class="flex gap-2">
-            <a href="https://maps.google.com" class="inline-flex items-center rounded-xl px-3 py-2" style="color:#3993cd;border:1px solid #3993cd">Lihat Peta</a>
-            <a href="https://wa.me/6281112345678" class="inline-flex items-center rounded-xl px-3 py-2 text-white" style="background:#39a2cd">WhatsApp</a>
+            <a href="https://maps.google.com" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-white text-teal-700 ring-1 ring-teal-600 hover:bg-teal-50">Lihat Peta</a>
+            <a href="https://wa.me/6281112345678" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-teal-600 text-white hover:bg-teal-700">WhatsApp</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section id="tentang" class="py-16">
-    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-      <div class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-6">
-        <div class="aspect-[16/10] rounded-xl overflow-hidden">
-          <img src="assets/clinic-1.jpg" alt="Klinik Pusat" class="w-full h-full object-cover" />
-        </div>
-      </div>
-      <div>
-        <h2 class="text-2xl md:text-3xl font-bold">Tentang Kami</h2>
-        <p class="mt-3 text-gray-600">Klinik Tanganku berkomitmen pada layanan yang Terpercaya, Empati, Dinamis, Unggul, dan Holistik. Kami menghadirkan pengalaman rawat jalan yang nyaman dengan tenaga profesional dan teknologi modern.</p>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <div class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-4"><div class="font-semibold">SDM Profesional</div><div class="text-sm text-gray-600">Dokter & perawat berpengalaman</div></div>
-          <div class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-4"><div class="font-semibold">Teknologi Modern</div><div class="text-sm text-gray-600">Lab, radiologi, sistem antrian</div></div>
         </div>
       </div>
     </div>

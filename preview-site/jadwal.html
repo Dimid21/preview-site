@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Klinik Tanganku — Kontak</title>
-  <meta name="description" content="Kontak & form janji">
+  <title>Klinik Tanganku — Jadwal Dokter</title>
+  <meta name="description" content="Jadwal dokter">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}.container{max-width:1152px}</style>
 <style>:root { --brand: #3993cd; }</style>
+  <link rel="stylesheet" href="styles-modern.morning-cocktail.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -35,9 +36,9 @@
         <nav class="hidden lg:flex items-center gap-6">
           <a href="index.html" class="text-gray-700 hover:text-teal-700">Beranda</a>
           <a href="layanan.html" class="text-gray-700 hover:text-teal-700">Layanan</a>
-          <a href="jadwal.html" class="text-gray-700 hover:text-teal-700">Jadwal Dokter</a>
+          <a href="jadwal.html" class="text-teal-700 font-semibold">Jadwal Dokter</a>
           <a href="artikel.html" class="text-gray-700 hover:text-teal-700">Info Kesehatan</a>
-          <a href="kontak.html" class="text-teal-700 font-semibold">Kontak</a>
+          <a href="kontak.html" class="text-gray-700 hover:text-teal-700">Kontak</a>
         </nav>
         <button class="lg:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 font-semibold bg-white text-teal-700 ring-1 ring-teal-600 hover:bg-teal-50" aria-label="Open menu" onclick="document.getElementById('mnav').classList.toggle('hidden')">
           ☰
@@ -47,47 +48,27 @@
         <div class="grid gap-2">
           <a href="index.html" class="text-gray-700 hover:text-teal-700">Beranda</a>
           <a href="layanan.html" class="text-gray-700 hover:text-teal-700">Layanan</a>
-          <a href="jadwal.html" class="text-gray-700 hover:text-teal-700">Jadwal Dokter</a>
+          <a href="jadwal.html" class="text-teal-700 font-semibold">Jadwal Dokter</a>
           <a href="artikel.html" class="text-gray-700 hover:text-teal-700">Info Kesehatan</a>
-          <a href="kontak.html" class="text-teal-700 font-semibold">Kontak</a>
+          <a href="kontak.html" class="text-gray-700 hover:text-teal-700">Kontak</a>
         </div>
       </div>
     </div>
   </header>
 
   <section class="py-16">
-    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
-      <div>
-        <h1 class="text-2xl md:text-3xl font-bold">Kontak Kami</h1>
-        <p class="text-gray-600 mt-2">Hubungi kami melalui telepon, WhatsApp, atau isi formulir berikut.</p>
-        <ul class="mt-4 space-y-1 text-gray-700">
-          <li>Call Center: (021) 123-4567</li>
-          <li>WhatsApp: 0811-1234-5678</li>
-          <li>Email: halo@klinik-teduh.id</li>
-          <li>IGD 24 Jam</li>
-        </ul>
-        <div id="janji" class="mt-8">
-          <h2 class="text-xl font-semibold mb-2">Buat Janji</h2>
-          <p class="text-sm text-gray-600">Isi form, kami akan menghubungi Anda.</p>
+    <div class="container mx-auto px-4">
+      <div class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold">Jadwal Dokter</h1>
+          <p class="text-gray-600 mt-2">Lihat jadwal terbaru dan sesuaikan dengan lokasi pilihan.</p>
+          <div class="mt-5 flex gap-3">
+            <a href="kontak.html#janji" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-teal-600 text-white hover:bg-teal-700">Kontak untuk Janji</a>
+            <a href="#" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-white text-teal-700 ring-1 ring-teal-600 hover:bg-teal-50">Unduh Jadwal (PDF)</a>
+          </div>
         </div>
+        <div class="aspect-[16/10] bg-gray-100 rounded-xl grid place-content-center text-gray-400">Tabel Jadwal (gantikan nanti)</div>
       </div>
-      <form class="rounded-2xl shadow-sm ring-1 ring-gray-200 bg-white p-6 text-gray-800">
-        <div class="grid gap-3">
-          <div>
-            <label class="text-sm font-semibold">Nama</label>
-            <input class="w-full mt-1 rounded-xl ring-1 ring-gray-300 px-3 py-2" placeholder="Nama Anda">
-          </div>
-          <div>
-            <label class="text-sm font-semibold">Email/HP</label>
-            <input class="w-full mt-1 rounded-xl ring-1 ring-gray-300 px-3 py-2" placeholder="example@mail.com / 08xx">
-          </div>
-          <div>
-            <label class="text-sm font-semibold">Pesan</label>
-            <textarea class="w-full mt-1 rounded-xl ring-1 ring-gray-300 px-3 py-2" rows="4" placeholder="Tulis pertanyaan Anda"></textarea>
-          </div>
-          <button type="button" class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-teal-600 text-white hover:bg-teal-700">Kirim</button>
-        </div>
-      </form>
     </div>
   </section>
 
