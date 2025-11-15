@@ -209,14 +209,18 @@ h3 {
     margin: auto;
     padding: 0 16px;
     width: 100%;
+    /* geser kiri */
+    margin-left: 150px;
+    margin-right: auto;
 }
 
 .hero-box {
     max-width: 680px;
     border-radius: var(--rad);
     padding: 24px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -230,17 +234,23 @@ h3 {
     right: 3%;
     top: 50%;
     transform: translateY(-50%);
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 45px rgba(2, 6, 23, 0.18);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    /* remove shape */
+    border-radius: 0;
+    overflow: visible;
+    border: none;
+    box-shadow: none;
+
+    /* transparan */
+    background: transparent;
 }
 
 .hero-slide-img {
-    width: 720px;
-    height: 460px;
-    object-fit: cover;
+    width: 720px; /* atau atur sesuai PNG */
+    height: auto; /* biar proporsional */
+    object-fit: contain;
     display: block;
+    background: transparent;
 }
 
 /* Grid helpers */
@@ -403,4 +413,9 @@ hr {
 .section-lokasi .btn-ghost {
     color: #2e765e;
     border-color: #2e765e;
+}
+
+/* Override Tailwind bg-gray-50 to Morning Cocktail background */
+.bg-gray-50 {
+    background-color: #d8d8d9 !important;
 }
