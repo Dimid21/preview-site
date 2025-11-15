@@ -1,4 +1,4 @@
-/* Modern UI theme for Klinik Tanganku */
+/* Modern UI theme for Klinik Tirta Husada */
 :root {
     /* Morning Cocktail palette: #BFC382, #D8D8D9, #2E765E, #8DA33B */
     --brand: #2e765e; /* hijau gelap */
@@ -391,11 +391,21 @@ hr {
     background: #d8d8d9; /* abu Morning Cocktail */
 }
 
-/* Panel kartu lokasi */
-.section-lokasi .card {
-    background: #ffffff;
-    border-radius: var(--rad);
-    box-shadow: var(--shadow);
+/* Panel kartu lokasi – glassmorphism */
+/* Glass super transparan untuk kartu lokasi */
+.lokasi-card {
+    border-radius: 24px;
+
+    /* super transparan */
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    /* shadow agak lembut */
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+
+    /* efek glass */
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
 }
 
 /* Banner hijau di bawah kartu (bar lokasi) */
