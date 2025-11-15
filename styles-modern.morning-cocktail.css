@@ -1,11 +1,11 @@
 /* Modern UI theme for Klinik Tanganku */
 :root {
     /* Morning Cocktail palette: #BFC382, #D8D8D9, #2E765E, #8DA33B */
-    --brand: #2e765e;      /* hijau gelap */
+    --brand: #2e765e; /* hijau gelap */
     --brand-600: #2e765e;
-    --brand-500: #8da33b;  /* hijau muda */
-    --brand-400: #bfc382;  /* kuning kehijauan */
-    --brand-300: #d8d8d9;  /* abu terang */
+    --brand-500: #8da33b; /* hijau muda */
+    --brand-400: #bfc382; /* kuning kehijauan */
+    --brand-300: #d8d8d9; /* abu terang */
     --brand-200: #d8d8d9;
     --brand-100: #d8d8d9;
 
@@ -22,9 +22,6 @@
     --rad: 16px;
     --shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
 }
-
-
-
 
 html,
 body {
@@ -230,7 +227,7 @@ h3 {
 
 .hero-slider {
     position: absolute;
-    right: 10%;
+    right: 3%;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 24px;
@@ -357,9 +354,6 @@ hr {
 .border-teal-700 {
     border-color: #2e765e !important;
 }
-
-
-
 
 /* Override Tailwind teal utilities to match Morning Cocktail */
 .bg-teal-700,
