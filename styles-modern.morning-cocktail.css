@@ -588,6 +588,67 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+/* =========================================
+   Layanan – Glass Card tanpa hover
+========================================= */
+
+.service-card {
+    /* copy dari .glass-card */
+    background: linear-gradient(
+        135deg,
+        var(--glass-bg-strong),
+        var(--glass-bg-soft)
+    );
+    border-radius: var(--glass-radius-lg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+    box-shadow: var(--glass-shadow);
+
+    /* boleh tetap ada transition kecil untuk isi (opsional) */
+    transition: none;
+}
+
+/* Matikan efek hover (tidak ada perubahan bayangan / posisi) */
+.service-card:hover {
+    box-shadow: var(--glass-shadow);
+    transform: none;
+}
+
+/* =============================================
+   Jadwal Dokter — Glass Card Besar
+============================================= */
+.schedule-card {
+    background: linear-gradient(
+        135deg,
+        var(--glass-bg-strong),
+        var(--glass-bg-soft)
+    );
+    border-radius: var(--glass-radius-lg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+    box-shadow: var(--glass-shadow);
+    padding: 40px;
+}
+
+/* Tinggi kolom konsisten */
+.schedule-column,
+.schedule-table {
+    min-height: 420px; /* kamu bisa naikkan 300 / 320 sesuai selera */
+}
+
+/* Panel tabel */
+.schedule-table {
+    background: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--glass-radius-md);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+    padding: 28px;
+}
+
 /* Banner hijau di bawah kartu lokasi */
 .section-lokasi .card .bg-teal-600,
 .section-lokasi .card .bg-teal-700 {
