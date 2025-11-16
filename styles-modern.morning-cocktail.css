@@ -856,3 +856,64 @@ hr {
     transform: translateY(-1px);
     box-shadow: 0 16px 30px rgba(15, 23, 42, 0.4);
 }
+
+/* Layout Tentang Kami */
+.about-layout {
+    max-width: 100%;
+    position: relative;
+}
+
+/* Gambar kiri, teks mengalir di kanan dan bawahnya */
+.about-photo {
+    float: left;
+    width: min(280px, 35%);
+    margin-right: 28px;
+    margin-bottom: 18px;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Judul berada di kolom kanan */
+.about-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Clear float setelah teks selesai */
+.about-copy::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Typography */
+.about-copy p,
+.about-copy li {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #374151;
+    margin-bottom: 0.7rem;
+}
+
+/* Bold h3 */
+.about-copy h3 {
+    margin-top: 1.3rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+/* Responsif mobile */
+@media (max-width: 768px) {
+    .about-photo {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-title {
+        margin-top: 0.5rem;
+    }
+}
