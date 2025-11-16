@@ -646,7 +646,60 @@ hr {
     backdrop-filter: blur(18px) saturate(160%);
     -webkit-backdrop-filter: blur(18px) saturate(160%);
     box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
-    padding: 28px;
+
+    padding: 0; /* hilangkan padding, biar iframe full */
+    overflow: hidden; /* supaya radius card kepotong rapi */
+    min-height: 420px; /* tinggi yang sudah kamu pilih */
+}
+
+.schedule-table iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Tabs Lokasi Jadwal */
+.schedule-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.schedule-tab {
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(46, 118, 94, 0.35);
+    background: #ffffff;
+    color: #195243;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.schedule-tab:hover {
+    background: #f1faf8;
+}
+
+.schedule-tab.is-active {
+    background: #2e765e;
+    color: #ffffff;
+    border-color: #2e765e;
+}
+
+/* Frame PDF di dalam glass */
+.schedule-frame {
+    width: 100%;
+    height: calc(420px - 48px); /* 420 tinggi total, 48px untuk area tabs */
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.schedule-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* Banner hijau di bawah kartu lokasi */

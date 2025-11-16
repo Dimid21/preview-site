@@ -156,7 +156,9 @@
                             </a>
 
                             <a
-                                href="#"
+                                id="download-pdf"
+                                href="assets/pdf/jadwal-dokter-solo-baru.pdf"
+                                target="_blank"
                                 class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold bg-white text-teal-700 ring-1 ring-teal-600 hover:bg-teal-50"
                             >
                                 Unduh Jadwal (PDF)
@@ -164,11 +166,32 @@
                         </div>
                     </div>
 
-                    <!-- Kolom Kanan (Glass panel untuk tabel) -->
-                    <div
-                        class="schedule-table flex items-center justify-center text-gray-500"
-                    >
-                        Tabel Jadwal (gantikan nanti)
+                    <!-- Kolom kanan (glass panel untuk tabel) -->
+                    <div class="schedule-table">
+                        <!-- Tabs Lokasi -->
+                        <div class="schedule-tabs">
+                            <button
+                                class="schedule-tab is-active"
+                                data-pdf="assets/pdf/jadwal-dokter-solo-baru.pdf"
+                            >
+                                Solo Baru
+                            </button>
+                            <button
+                                class="schedule-tab"
+                                data-pdf="assets/pdf/jadwal-dokter-laweyan-grogol.pdf"
+                            >
+                                Laweyan &amp; Grogol
+                            </button>
+                        </div>
+
+                        <!-- Iframe PDF -->
+                        <div class="schedule-frame">
+                            <iframe
+                                id="schedule-iframe"
+                                src="assets/pdf/jadwal-dokter-solo-baru.pdf"
+                                title="Jadwal Dokter Klinik Tirta Husada"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -288,5 +311,34 @@
                 </div>
             </div>
         </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabs = document.querySelectorAll(".schedule-tab");
+                const iframe = document.getElementById("schedule-iframe");
+                const downloadBtn = document.getElementById("download-pdf");
+
+                if (!tabs.length || !iframe) return;
+
+                tabs.forEach((tab) => {
+                    tab.addEventListener("click", function (event) {
+                        event.preventDefault(); // jaga-jaga kalau nanti pakai <a>
+
+                        // hilangkan aktif di semua tab
+                        tabs.forEach((t) => t.classList.remove("is-active"));
+                        // aktifkan tab yang diklik
+                        tab.classList.add("is-active");
+
+                        // ganti sumber PDF
+                        const pdf = tab.dataset.pdf;
+                        if (pdf) {
+                            iframe.src = pdf;
+                            if (downloadBtn) {
+                                downloadBtn.href = pdf; // tombol Unduh ikut lokasi aktif
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
