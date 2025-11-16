@@ -1,42 +1,32 @@
-/* =========================================================
-   Modern UI theme – Klinik Tirta Husada
-   Palette: Morning Cocktail (#BFC382, #D8D8D9, #2E765E, #8DA33B)
-   ========================================================= */
-
+/* Modern UI theme for Klinik Tirta Husada */
 :root {
-    /* Glass system — Bright Premium Version */
     --glass-radius-lg: 28px;
     --glass-radius-md: 20px;
 
-    /* Glass background lebih terang & lebih menyala */
-    --glass-bg-strong: rgba(255, 255, 255, 0.58); /* dari 0.35 → 0.58 */
-    --glass-bg-soft: rgba(255, 255, 255, 0.28); /* dari 0.15 → 0.28 */
+    --glass-bg-strong: rgba(255, 255, 255, 0.35);
+    --glass-bg-soft: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 25px 55px rgba(2, 16, 32, 0.1);
+    --glass-shadow-hover: 0 35px 75px rgba(0, 0, 0, 0.18);
 
-    /* Border lebih putih (tampilan kaca lebih nyata) */
-    --glass-border: rgba(255, 255, 255, 0.75); /* dari 0.40 → 0.75 */
+    --glass-blur: 18px;
+    --glass-sat: 180%;
 
-    /* Blur lebih tinggi = efek frosted lebih lembut & premium */
-    --glass-blur: 26px; /* dari 18px → 26px */
-    --glass-sat: 190%; /* sedikit lebih vivid */
+    /* brand hijau tetap kompatibel */
+    --brand-green: var(--brand-600);
+    --brand-green-dark: #195243;
 
-    /* Shadow lebih besar & lebih soft untuk floating feel */
-    --glass-shadow: 0 30px 55px rgba(2, 16, 32, 0.12);
-    --glass-shadow-hover: 0 40px 80px rgba(0, 0, 0, 0.18);
-
-    /* Brand */
-    --brand-600: #2e765e; /* hijau gelap */
+    /* Morning Cocktail palette: #BFC382, #D8D8D9, #2E765E, #8DA33B */
+    --brand: #2e765e; /* hijau gelap */
+    --brand-600: #2e765e;
     --brand-500: #8da33b; /* hijau muda */
-    --brand-400: #bfc382;
-    --brand-300: #d8d8d9;
+    --brand-400: #bfc382; /* kuning kehijauan */
+    --brand-300: #d8d8d9; /* abu terang */
     --brand-200: #d8d8d9;
     --brand-100: #d8d8d9;
 
-    --brand: var(--brand-600);
-    --brand-green: var(--brand-600);
-    --brand-green-dark: #195243;
-    --btn: var(--brand-500);
+    --btn: #8da33b;
 
-    /* Ink & surfaces */
     --ink-900: #0f172a;
     --ink-700: #334155;
     --ink-500: #64748b;
@@ -49,14 +39,10 @@
     --shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
 }
 
-/* Base typography & layout
-   -------------------------------------------------------- */
-
 html,
 body {
     scroll-behavior: smooth;
 }
-
 body {
     background: var(--bg);
     color: var(--ink-700);
@@ -77,22 +63,18 @@ h3 {
     color: var(--ink-900);
     letter-spacing: -0.01em;
 }
-
 h1 {
     font-size: clamp(28px, 4vw, 44px);
     font-weight: 800;
 }
-
 h2 {
     font-size: clamp(22px, 3vw, 32px);
     font-weight: 800;
 }
-
 h3 {
     font-size: clamp(18px, 2.4vw, 24px);
     font-weight: 700;
 }
-
 .muted {
     color: var(--ink-500);
 }
@@ -102,20 +84,14 @@ h3 {
     margin-inline: auto;
     padding-inline: 16px;
 }
-
-/* Section spacing: satu sumber saja */
 .section {
-    padding: 48px 24px;
+    padding: 56px 0;
 }
-
 @media (min-width: 768px) {
     .section {
-        padding: 72px 24px;
+        padding: 72px 0;
     }
 }
-
-/* Generic card / glass
-   -------------------------------------------------------- */
 
 .card {
     background: var(--card);
@@ -123,15 +99,11 @@ h3 {
     box-shadow: var(--shadow);
     border: 1px solid var(--ring);
 }
-
 .glass {
     backdrop-filter: saturate(140%) blur(8px);
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.75);
 }
-
-/* Buttons
-   -------------------------------------------------------- */
 
 .btn {
     display: inline-flex;
@@ -145,62 +117,26 @@ h3 {
     transition: 0.2s ease;
     cursor: pointer;
 }
-
 .btn:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(57, 147, 205, 0.15);
 }
-
 .btn-primary {
-    background: linear-gradient(
-        135deg,
-        rgba(46, 118, 94, 0.95),
-        rgba(141, 163, 59, 0.95)
-    );
+    background: var(--btn);
     color: #fff;
-    box-shadow: 0 6px 20px rgba(46, 118, 94, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(6px);
-    transition: 0.25s;
 }
-
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(46, 118, 94, 0.34);
+    filter: brightness(0.95);
 }
-
 .btn-ghost {
     background: #fff;
     color: var(--brand);
     border-color: var(--brand-300);
 }
-
 .btn-ghost:hover {
     background: var(--brand-100);
 }
 
-/* Outline button (lokasi section) */
-.btn-outline {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 18px;
-    border-radius: 14px;
-    font-weight: 600;
-    color: var(--brand-600);
-    border: 1px solid var(--brand-600);
-    backdrop-filter: blur(4px);
-    background: rgba(255, 255, 255, 0.45);
-    transition: 0.25s;
-}
-
-.btn-outline:hover {
-    background: rgba(255, 255, 255, 0.7);
-    border-color: var(--brand-500);
-    color: var(--brand-500);
-    transform: translateY(-2px);
-}
-
-/* Chips */
 .chip {
     display: inline-block;
     font-weight: 700;
@@ -212,14 +148,11 @@ h3 {
     background: rgba(232, 244, 252, 0.8);
 }
 
-/* Top bar & navbar
-   -------------------------------------------------------- */
-
+/* Top bar & navbar */
 .topbar {
     background: var(--brand);
     color: #fff;
 }
-
 .navbar {
     position: sticky;
     top: 0;
@@ -228,7 +161,6 @@ h3 {
     border-bottom: 1px solid var(--ring);
     backdrop-filter: saturate(120%) blur(6px);
 }
-
 .nav-inner {
     display: flex;
     align-items: center;
@@ -236,52 +168,50 @@ h3 {
     gap: 12px;
     padding: 14px 0;
 }
-
 .nav-links a {
     color: var(--ink-700);
     font-weight: 600;
     padding: 8px 10px;
     border-radius: 10px;
 }
-
 .nav-links a:hover {
     background: var(--brand-100);
     color: var(--brand);
     text-decoration: none;
 }
 
-/* Hero section
-   -------------------------------------------------------- */
-
+/* === HERO dengan background static (parallax sederhana) === */
 .hero-wrap {
     position: relative;
     margin: 0;
 }
 
-/* Background image hero (parallax sederhana) */
+/* Container hero dengan background image */
 .hero-media {
     position: relative;
     width: 100%;
-    height: 420px;
+    height: 420px; /* tinggi hero di layar kecil */
     overflow: hidden;
 
     background-image: url("assets/hero-full.jpg");
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* kunci gambar saat scroll */
 }
 
+/* Di desktop, hero sedikit lebih tinggi */
 @media (min-width: 1024px) {
     .hero-media {
         height: 520px;
     }
 }
 
+/* Sembunyikan <img> di dalam hero-media, karena kita sudah pakai background */
 .hero-media img {
     display: none;
 }
 
-/* Overlay isi hero */
+/* Overlay teks di atas hero */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -289,17 +219,17 @@ h3 {
     align-items: center;
 }
 
-/* Konten kiri hero */
+/* Sisanya boleh tetap seperti sebelumnya */
 .hero-left {
     max-width: 1200px;
     margin: auto;
     padding: 0 16px;
     width: 100%;
+    /* geser kiri */
     margin-left: 150px;
     margin-right: auto;
 }
 
-/* Glass hero box */
 .hero-box {
     max-width: 680px;
     padding: 24px;
@@ -327,47 +257,46 @@ h3 {
     }
 }
 
-/* Ilustrasi kanan hero */
 .hero-slider {
     position: absolute;
     right: 3%;
     top: 50%;
     transform: translateY(-50%);
+
+    /* remove shape */
     border-radius: 0;
     overflow: visible;
     border: none;
     box-shadow: none;
+
+    /* transparan */
     background: transparent;
 }
 
 .hero-slide-img {
-    width: 720px;
-    height: auto;
+    width: 720px; /* atau atur sesuai PNG */
+    height: auto; /* biar proporsional */
     object-fit: contain;
     display: block;
     background: transparent;
 }
 
-/* Grid helper */
+/* Grid helpers */
 .grid-3 {
     display: grid;
     gap: 20px;
 }
-
 @media (min-width: 1024px) {
     .grid-3 {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Links, hr, form, table, partners
-   -------------------------------------------------------- */
-
+/* Links, hr, forms, table, partners */
 a {
     text-decoration: none;
     color: var(--brand);
 }
-
 a:hover {
     text-decoration: underline;
 }
@@ -385,7 +314,6 @@ hr {
     padding: 0.65rem 0.8rem;
     width: 100%;
 }
-
 .field:focus {
     outline: none;
     border-color: var(--brand-300);
@@ -400,13 +328,11 @@ hr {
     border-radius: 12px;
     border: 1px solid var(--ring);
 }
-
 .table th,
 .table td {
     padding: 12px 14px;
     border-bottom: 1px solid var(--ring);
 }
-
 .table thead th {
     background: var(--brand-100);
     color: var(--ink-900);
@@ -427,7 +353,6 @@ hr {
     transform: translateY(6px);
     animation: fade 0.5s ease forwards;
 }
-
 @keyframes fade {
     to {
         opacity: 1;
@@ -440,19 +365,35 @@ hr {
     height: 10px;
     width: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--brand-300);
     border-radius: 999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: var(--brand-400);
 }
 
-/* Tailwind teal overrides (satu blok saja)
-   -------------------------------------------------------- */
+/* Override Tailwind teal ke brand biru */
+.bg-teal-700 {
+    background: #2e765e !important;
+}
+.bg-teal-600 {
+    background: #2e765e !important;
+}
+.bg-teal-500 {
+    background: #2e765e !important;
+}
+.bg-teal-100 {
+    background: #d8d8d9 !important;
+}
+.text-teal-700 {
+    color: #2e765e !important;
+}
+.border-teal-700 {
+    border-color: #2e765e !important;
+}
 
+/* Override Tailwind teal utilities to match Morning Cocktail */
 .bg-teal-700,
 .bg-teal-600,
 .bg-teal-500 {
@@ -471,14 +412,16 @@ hr {
     border-color: #2e765e !important;
 }
 
-/* Lokasi Kami – Morning Cocktail
-   -------------------------------------------------------- */
+/* ===== Lokasi Kami – Morning Cocktail ===== */
 
+/* Kartu lokasi (background abu lembut) */
 .section-lokasi {
-    background: #d8d8d9;
+    background: #d8d8d9; /* abu Morning Cocktail */
 }
 
-/* Glass card global (dipakai lokasi & artikel) */
+/* Panel kartu lokasi – glassmorphism */
+/* Glass super transparan untuk kartu lokasi */
+/* === GLASS CARD GLOBAL === */
 .glass-card {
     background: linear-gradient(
         135deg,
@@ -493,12 +436,13 @@ hr {
     transition: 0.25s ease;
 }
 
+/* Hover halus untuk semua glass-card */
 .glass-card:hover {
     box-shadow: var(--glass-shadow-hover);
     transform: translateY(-4px);
 }
 
-/* Versi lebih kompak */
+/* Versi lebih kompak (dipakai kalau kartunya kecil) */
 .glass-card--compact {
     border-radius: var(--glass-radius-md);
     backdrop-filter: blur(14px) saturate(160%);
@@ -506,7 +450,7 @@ hr {
     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
 }
 
-/* Panel glass besar (kalau dipakai) */
+/* === PANEL SECTION GLASS === */
 .glass-panel {
     background: linear-gradient(
         145deg,
@@ -521,7 +465,7 @@ hr {
     padding: 2rem;
 }
 
-/* Glass button khusus */
+/* === GLASS BUTTON === */
 .glass-button {
     display: inline-flex;
     align-items: center;
@@ -554,29 +498,67 @@ hr {
     box-shadow: 0 16px 35px rgba(15, 23, 42, 0.25);
 }
 
-/* Glass badge kecil (lokasi) */
-/* Glass badge untuk Klinik Pusat / Cabang – tinted green */
-.glass-badge {
-    background: rgba(
-        46,
-        118,
-        94,
-        0.12
-    ); /* hijau sangat muda, kontras di glass putih */
-    border: 1px solid rgba(46, 118, 94, 0.35); /* outline hijau lembut */
-    backdrop-filter: blur(10px); /* masih ada efek glass tipis */
+/* Glass Button System */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    font-weight: 600;
+    background: linear-gradient(
+        135deg,
+        rgba(46, 118, 94, 0.95),
+        rgba(141, 163, 59, 0.95)
+    );
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(46, 118, 94, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+}
 
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(46, 118, 94, 0.34);
+}
+
+/* Outline */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    border-radius: 14px;
+    font-weight: 600;
+    color: var(--brand-600);
+    border: 1px solid var(--brand-600);
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.45);
+    transition: 0.25s;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: var(--brand-500);
+    color: var(--brand-500);
+    transform: translateY(-2px);
+}
+
+/* Glass Badge / Tag kecil */
+.glass-badge {
+    background: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
     padding: 4px 12px;
     border-radius: 999px;
 
-    color: #195243; /* hijau gelap, mudah dibaca */
+    color: #475569;
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
 
-/* Optional glass nav */
+/* 6. Glass Navbar (opsional) */
 .glass-nav {
     background: linear-gradient(
         90deg,
@@ -588,10 +570,10 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-/* Banner hijau di bawah kartu lokasi */
+/* Banner hijau di bawah kartu (bar lokasi) */
 .section-lokasi .card .bg-teal-600,
 .section-lokasi .card .bg-teal-700 {
-    background: #2e765e !important;
+    background: #2e765e !important; /* hijau utama */
     color: #ffffff !important;
 }
 
@@ -600,25 +582,31 @@ hr {
     background: #8da33b;
     border-color: #8da33b;
 }
-
 .section-lokasi .btn-ghost {
     color: #2e765e;
     border-color: #2e765e;
 }
 
-/* Tailwind bg-gray-50 → palet Morning Cocktail */
+/* Override Tailwind bg-gray-50 to Morning Cocktail background */
 .bg-gray-50 {
     background-color: #d8d8d9 !important;
 }
 
-/* Artikel / Blog section
-   -------------------------------------------------------- */
+/* ====== SECTION UMUM ====== */
 
-/* Section artikel (beranda & halaman artikel) pakai background sama dengan lokasi
-   supaya layout konsisten */
-.section-articles,
+.section {
+    padding: 48px 24px;
+}
+
+.section-articles {
+    /* warna latar lembut seperti screenshot */
+    background: #e3e4e6;
+}
+
 .section-articles--home {
-    background: #d8d8d9;
+    /* di beranda biasanya page bg sudah abu-abu,
+     jadi cukup transparan / gunakan warna body */
+    background: transparent;
 }
 
 .section-header {
@@ -627,13 +615,12 @@ hr {
     justify-content: space-between;
     gap: 28px;
     margin: 0 auto 32px;
-    max-width: 1500px;
+    max-width: 1280px; /* lebih lebar */
 }
 
 .section-header h1,
 .section-header h2 {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 700; /* sama dengan heading besar lain */
+    margin: 0 0 4px;
 }
 
 .section-subtitle {
@@ -657,32 +644,44 @@ hr {
     text-decoration: underline;
 }
 
-/* Grid artikel */
+/* ==== GRID ARTIKEL – versi besar ==== */
+
 .article-grid {
     display: grid;
-    max-width: 1500px;
+    max-width: 1280px;
     margin: 0 auto;
-    gap: 32px;
+    gap: 32px; /* lebih lebar */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* Beranda: 4 kolom di desktop */
+/* Home: paksa 4 kolom di desktop */
 @media (min-width: 1024px) {
     .article-grid--home {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-/* Kartu artikel (base) */
+/* Di beranda, kartu boleh sedikit lebih pendek */
+.article-grid--home .article-card {
+    padding-block: 20px;
+}
+
+@media (min-width: 1024px) {
+    .article-grid--home {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+/* ==== KARTU ARTIKEL – versi besar premium ==== */
+
 .article-card {
     background: #ffffff;
     border-radius: 28px;
-    padding: 32px;
+    padding: 32px; /* lebih besar */
     box-shadow: 0 25px 55px rgba(15, 23, 42, 0.1);
     display: flex;
     flex-direction: column;
     gap: 16px;
-    min-height: 250px;
+    min-height: 250px; /* kartu lebih tinggi */
     transition: 0.25s ease;
 }
 
@@ -691,30 +690,17 @@ hr {
     box-shadow: 0 35px 75px rgba(0, 0, 0, 0.15);
 }
 
-/* Bila diberi .glass-card, pakai glass style global */
-.article-card.glass-card {
-    background: linear-gradient(
-        135deg,
-        var(--glass-bg-strong),
-        var(--glass-bg-soft)
-    );
-    border-radius: var(--glass-radius-lg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
-    box-shadow: var(--glass-shadow);
-}
-
-.article-card.glass-card:hover {
-    box-shadow: var(--glass-shadow-hover);
-    transform: translateY(-4px);
-}
-
 .article-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* lebih besar */
+}
+
+.article-tag {
+    padding: 6px 14px; /* lebih besar */
+    font-size: 0.8rem;
+    border-radius: 999px;
 }
 
 .article-date {
@@ -723,14 +709,14 @@ hr {
 }
 
 .article-title {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* lebih besar */
     font-weight: 700;
     margin: 0;
     line-height: 1.35;
 }
 
 .article-excerpt {
-    font-size: 1rem;
+    font-size: 1rem; /* lebih besar */
     color: #4b5563;
     margin: 0;
     line-height: 1.55;
@@ -743,21 +729,41 @@ hr {
     color: var(--brand-600);
 }
 
-/* Badge artikel – ukuran sama dengan glass-badge */
+/* ====== RESPONSIVE ====== */
+
+@media (max-width: 767px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .article-card {
+        border-radius: 18px;
+    }
+}
+
+/* === FINAL ARTICLE TAG SYSTEM — Clean Version (No Duplicate Rules) === */
+
+/* Badge dasar — ukuran dan bentuk sesuai glass-badge */
 .article-tag {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     padding: 4px 12px;
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+
     border-radius: 999px;
+
+    /* efek glass ringan */
     border: 1px solid rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    color: #ffffff;
+
+    color: #ffffff; /* teks selalu putih */
 }
 
 /* Promo */
@@ -788,10 +794,10 @@ hr {
     );
 }
 
-/* Thumbnail untuk kartu artikel */
+/* ==== THUMBNAIL UNTUK KARTU ARTIKEL ==== */
+
 .article-card--with-thumb {
-    /* turunkan isi kartu sedikit dari atas */
-    padding-top: 16px;
+    padding-top: 0 !important;
 }
 
 .article-thumb {
@@ -799,60 +805,42 @@ hr {
     height: 160px;
     overflow: hidden;
     border-radius: 20px;
-
-    /* beri sedikit ruang dari tepi atas kartu,
-       dan tetap ada jarak ke konten di bawah */
-    margin-top: 4px;
     margin-bottom: 20px;
-
     box-shadow: 0 12px 25px rgba(15, 23, 42, 0.18);
 }
 
 .article-thumb img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* biar foto rapi */
     display: block;
 }
 
-/* Responsive tweaks */
-@media (max-width: 767px) {
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* ==== Artikel dengan Glassmorphism seperti "Lokasi Kami" ==== */
 
-    .article-card {
-        border-radius: 18px;
-    }
+/* Samakan background section dengan section lokasi, biar tidak kontras */
+.section-articles,
+.section-articles--home {
+    background: #d8d8d9; /* sama seperti .section-lokasi */
 }
 
-/* ==== Hero primary button fix (Lihat Lokasi) ==== */
-
-.hero-box .btn-primary {
-    /* buang gradient sebelumnya */
-    background-image: none !important;
-
-    /* warna hijau solid */
-    background-color: #2e765e !important;
-
-    /* bentuk pill */
-    border-radius: 999px;
-    border: none;
-
-    /* ukuran nyaman */
-    padding: 0.75rem 1.6rem;
-
-    /* bayangan lembut */
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.35);
-
-    /* teks */
-    color: #ffffff;
-    font-weight: 700;
+/* Kartu artikel yang juga punya class .glass-card
+   akan memakai gaya glass yang sama seperti kartu lokasi */
+.article-card.glass-card {
+    background: linear-gradient(
+        135deg,
+        var(--glass-bg-strong),
+        var(--glass-bg-soft)
+    );
+    border-radius: var(--glass-radius-lg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+    box-shadow: var(--glass-shadow);
 }
 
-.hero-box .btn-primary:hover {
-    filter: brightness(1.05);
-    transform: translateY(-1px);
-    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.4);
+/* Hover-nya juga mengikuti gaya glass-card */
+.article-card.glass-card:hover {
+    box-shadow: var(--glass-shadow-hover);
+    transform: translateY(-4px);
 }

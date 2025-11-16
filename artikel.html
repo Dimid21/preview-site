@@ -85,7 +85,7 @@
                         <a
                             href="artikel.html"
                             class="text-teal-700 font-semibold"
-                            >Info Kesehatan</a
+                            >Informasi</a
                         >
                         <a
                             href="kontak.html"
@@ -121,7 +121,7 @@
                         <a
                             href="artikel.html"
                             class="text-teal-700 font-semibold"
-                            >Info Kesehatan</a
+                            >Informasi</a
                         >
                         <a
                             href="kontak.html"
@@ -133,68 +133,134 @@
             </div>
         </header>
 
-        <section class="py-16">
-            <div class="container mx-auto px-4">
-                <div class="flex items-end justify-between gap-4 mb-6">
-                    <h1 class="text-2xl md:text-3xl font-bold">
-                        Info Kesehatan
-                    </h1>
-                    <a href="#" class="text-teal-700 underline">RSS/Arsip</a>
+        <section class="section section-articles">
+            <div class="section-header">
+                <div>
+                    <h1>Informasi &amp; Artikel</h1>
+                    <p class="section-subtitle">
+                        Update seputar layanan, promo, dan tips kesehatan dari
+                        Klinik Tirta Husada.
+                    </p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <article class="glass-card glass-card--compact p-5">
-                        <div
-                            class="aspect-[16/10] rounded-xl overflow-hidden mb-3"
-                        >
-                            <img
-                                src="assets/mcu.jpg"
-                                alt="Tips Cegah Flu"
-                                class="w-full h-full object-cover"
-                            />
-                        </div>
-                        <h3 class="font-semibold">
-                            Tips Cegah Flu Musim Hujan
-                        </h3>
-                        <p class="text-sm text-gray-600 mt-1">
-                            Vaksinasi & gaya hidup sehat untuk daya tahan tubuh.
-                        </p>
-                    </article>
-                    <article class="glass-card glass-card--compact p-5">
-                        <div
-                            class="aspect-[16/10] rounded-xl overflow-hidden mb-3"
-                        >
-                            <img
-                                src="assets/lab.jpg"
-                                alt="MCU Karyawan"
-                                class="w-full h-full object-cover"
-                            />
-                        </div>
-                        <h3 class="font-semibold">
-                            MCU Karyawan: Manfaat & Prosedur
-                        </h3>
-                        <p class="text-sm text-gray-600 mt-1">
-                            Solusi pemeriksaan menyeluruh bagi perusahaan.
-                        </p>
-                    </article>
-                    <article class="glass-card glass-card--compact p-5">
-                        <div
-                            class="aspect-[16/10] rounded-xl overflow-hidden mb-3"
-                        >
-                            <img
-                                src="assets/maternity.jpg"
-                                alt="Perawatan Gigi Anak"
-                                class="w-full h-full object-cover"
-                            />
-                        </div>
-                        <h3 class="font-semibold">
-                            Perawatan Gigi Anak Tanpa Takut
-                        </h3>
-                        <p class="text-sm text-gray-600 mt-1">
-                            Pendekatan ramah anak di klinik kami.
-                        </p>
-                    </article>
-                </div>
+
+                <!-- pojok kanan atas, pengganti RSS/Arsip -->
+                <a href="#" class="section-link">RSS / Arsip</a>
             </div>
+
+            <!-- GRID KARTU ARTIKEL -->
+            <div class="article-grid">
+                <!-- Artikel 1 -->
+                <article
+                    class="article-card glass-card article-card--with-thumb"
+                >
+                    <div class="article-thumb">
+                        <img src="assets/thumb-mcu.jpg" alt="MCU Akhir Tahun" />
+                    </div>
+
+                    <div class="article-card-header">
+                        <span class="article-tag article-tag--promo"
+                            >Promo</span
+                        >
+                        <p class="article-date">12 Desember 2025</p>
+                    </div>
+
+                    <h3 class="article-title">
+                        Paket Medical Check Up Akhir Tahun
+                    </h3>
+
+                    <p class="article-excerpt">
+                        Paket MCU lengkap dengan harga spesial untuk keluarga...
+                    </p>
+
+                    <a href="#" class="article-link">Baca selengkapnya</a>
+                </article>
+
+                <!-- Artikel 2 -->
+                <article
+                    class="article-card glass-card article-card--with-thumb"
+                >
+                    <div class="article-thumb">
+                        <img
+                            src="assets/thumb-event.jpg"
+                            alt="Seminar Diabetes"
+                        />
+                    </div>
+
+                    <div class="article-card-header">
+                        <span class="article-tag article-tag--event"
+                            >Event</span
+                        >
+                        <p class="article-date">3 Desember 2025</p>
+                    </div>
+
+                    <h3 class="article-title">
+                        Seminar: Cegah Diabetes Sejak Dini
+                    </h3>
+
+                    <p class="article-excerpt">
+                        Seminar kesehatan gratis bersama dokter kami...
+                    </p>
+
+                    <a href="#" class="article-link">Baca selengkapnya</a>
+                </article>
+
+                <!-- Artikel 3 -->
+                <article
+                    class="article-card glass-card article-card--with-thumb"
+                >
+                    <div class="article-thumb">
+                        <img src="assets/thumb-covid.jpg" alt="COVID Booster" />
+                    </div>
+
+                    <div class="article-card-header">
+                        <span class="article-tag article-tag--artikel"
+                            >Artikel</span
+                        >
+                        <p class="article-date">25 November 2025</p>
+                    </div>
+
+                    <h3 class="article-title">
+                        COVID-19: Pentingnya Vaksinasi Booster
+                    </h3>
+
+                    <p class="article-excerpt">
+                        Kenapa vaksinasi tetap penting meskipun kasus sudah
+                        menurun...
+                    </p>
+
+                    <a href="#" class="article-link">Baca selengkapnya</a>
+                </article>
+
+                <!-- Artikel 4 -->
+                <article
+                    class="article-card glass-card article-card--with-thumb"
+                >
+                    <div class="article-thumb">
+                        <img src="assets/thumb-flu.jpg" alt="Tips Cegah Flu" />
+                    </div>
+
+                    <div class="article-card-header">
+                        <span class="article-tag article-tag--artikel"
+                            >Artikel</span
+                        >
+                        <p class="article-date">18 November 2025</p>
+                    </div>
+
+                    <h3 class="article-title">Tips Cegah Flu Musim Hujan</h3>
+
+                    <p class="article-excerpt">
+                        Cara menjaga daya tahan tubuh agar tidak mudah sakit
+                        pada musim hujan...
+                    </p>
+
+                    <a href="#" class="article-link">Baca selengkapnya</a>
+                </article>
+
+                <!-- Tambah artikel lain di bawah dengan struktur <article class="article-card"> yang sama -->
+            </div>
+
+            <!-- Bagian bawah tetap: Rekanan / Asuransi -->
+            <!-- (biarkan blok asuransi seperti yang sudah ada) -->
         </section>
 
         <section id="rekanan" class="py-10">
@@ -305,7 +371,7 @@
                         </li>
                         <li>
                             <a href="artikel.html" class="hover:text-teal-700"
-                                >Info Kesehatan</a
+                                >Informasi</a
                             >
                         </li>
                     </ul>
