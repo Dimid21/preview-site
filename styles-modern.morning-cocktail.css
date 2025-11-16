@@ -744,6 +744,7 @@ hr {
 }
 
 /* Badge artikel – ukuran sama dengan glass-badge */
+/* Badge artikel tanpa blur */
 .article-tag {
     display: inline-flex;
     align-items: center;
@@ -754,9 +755,13 @@ hr {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+
+    /* remove blur & glass */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+
+    /* warna teks konsisten */
     color: #ffffff;
 }
 
@@ -1035,4 +1040,55 @@ hr {
 
 .operation-hours li {
     margin-bottom: 2px;
+}
+
+/* =========================================================
+   Rekanan / Asuransi – Glass-Light (Logo Version)
+========================================================= */
+
+.insurance-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 180px;
+    height: 90px;
+
+    padding: 20px;
+    border-radius: 18px;
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(46, 118, 94, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+    transition: 0.2s ease;
+
+    /* Prevent layout shift */
+    overflow: hidden;
+}
+
+/* Logo image inside */
+.insurance-item img {
+    height: 90px; /* paksa semua logo tinggi 40px */
+    width: auto; /* lebar mengikuti proporsi */
+    max-width: 170px;
+    object-fit: contain; /* jaga proporsi logo */
+    pointer-events: none; /* logo tidak perlu interaksi */
+    filter: saturate(1.1); /* sedikit lebih hidup */
+    opacity: 0.92; /* supaya serasi dengan glass */
+    transition: opacity 0.2s ease;
+}
+
+.insurance-item:hover img {
+    opacity: 1;
+}
+
+.partners-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-items: center;
 }
