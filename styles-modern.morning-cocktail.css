@@ -1551,3 +1551,8 @@ hr {
         width: 560px; /* semula 720px -> mengecil supaya tidak menabrak teks */
     }
 }
+
+/* Sembunyikan form Kontak (sementara) */
+.contact-form-card {
+    display: none;
+}
