@@ -1258,7 +1258,7 @@ hr {
    ========================================================= */
 
 /* Tablet & mobile: hero lebih rapat, tanpa overlap gambar */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     /* background fixed biasanya bikin patah di mobile */
     .hero-media {
         height: 420px;
@@ -1401,5 +1401,153 @@ hr {
 
     .article-excerpt {
         font-size: 0.95rem;
+    }
+}
+
+/* ============================================
+   Lokasi Klinik – lebar konsisten semua card
+   ============================================ */
+@media (max-width: 1024px) {
+    /* grid jadi kolom vertikal */
+    .section-lokasi .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* setiap card: full width tapi dibatasi max-width */
+    .section-lokasi .grid > .glass-card {
+        width: 100%;
+        max-width: 520px; /* ubah angka ini kalau mau lebih sempit/lebar */
+        margin-inline: auto;
+    }
+}
+
+/* ============================================
+   Lokasi Klinik – tinggi map & card di mobile
+   ============================================ */
+@media (max-width: 640px) {
+    /* Map sedikit lebih pendek di mobile */
+    .location-map-embed {
+        padding-top: 56%; /* dari 56% → 45% (lebih ceper) */
+    }
+
+    /* Kalau ingin card kurang lebih setara tinggi */
+    .section-lokasi .grid > .glass-card {
+        min-height: 260px; /* ubah angka ini kalau mau lebih tinggi */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Jam operasional + tombol di bawah */
+    .section-lokasi .operation-hours {
+        margin-bottom: 10px;
+    }
+
+    .section-lokasi .operation-hours + .flex {
+        margin-top: auto; /* blok tombol dorong ke bawah */
+    }
+}
+
+/* =========================================================
+   HYBRID v2 – Informasi Terbaru (Beranda)
+   Samakan LEBAR seperti LOKASI + Tinggi proporsional
+   ========================================================= */
+
+/* Tablet & mobile – grid menjadi column + lebar disamakan */
+@media (max-width: 1024px) {
+    .section-articles--home .article-grid.article-grid--home {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center; /* center seperti lokasi */
+    }
+
+    .section-articles--home .article-card {
+        width: 100%;
+        max-width: 520px !important; /* SAMA dengan LOKASI */
+        margin-inline: auto;
+    }
+}
+
+/* Mobile – tinggi lebih besar dan lebih konsisten */
+@media (max-width: 640px) {
+    .section-articles--home .article-card {
+        min-height: 440px; /* dari 340 → 420 agar lebih nyaman */
+        padding: 26px 22px;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Thumbnail: tinggi besar & seragam */
+    .section-articles--home .article-thumb {
+        flex: 0 0 240px; /* 170 → 200px */
+        height: 240px;
+        margin-bottom: 18px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .section-articles--home .article-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Judul dibatasi 2 baris */
+    .section-articles--home .article-title {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Excerpt dibatasi 2 baris */
+    .section-articles--home .article-excerpt {
+        font-size: 1rem;
+        margin-bottom: 10px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Baca selengkapnya turun ke bawah */
+    .section-articles--home .article-link {
+        margin-top: auto;
+    }
+}
+
+/* =========================================================
+   Hero – Laptop 1024–1440px
+   Cegah ilustrasi kanan menutupi teks kiri
+   ========================================================= */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    /* Kotak teks kiri sedikit dipersempit & digeser */
+    .hero-left {
+        max-width: 1100px;
+        margin-left: 80px; /* semula 150px */
+        margin-right: auto;
+        padding-inline: 16px;
+    }
+
+    .hero-box {
+        max-width: 560px; /* semula 680px, supaya ada ruang untuk gambar */
+    }
+
+    .hero-slider {
+        right: -4%;
+        top: 58%;
+        transform: translateY(-50%);
+    }
+
+    .hero-slide-img {
+        width: 560px; /* semula 720px -> mengecil supaya tidak menabrak teks */
     }
 }
